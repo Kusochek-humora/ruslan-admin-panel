@@ -16,7 +16,7 @@ async function handleLogout() {
     <!-- Desktop sidebar -->
     <aside class="sidebar">
       <div class="sidebar-header">
-        <span class="logo">🎤 Tiko Admin</span>
+        <span class="logo">🎤 Ruslan Admin</span>
       </div>
 
       <nav class="sidebar-nav">
@@ -44,7 +44,7 @@ async function handleLogout() {
 
     <!-- Mobile top header -->
     <header class="mobile-header">
-      <span class="logo">🎤 Tiko Admin</span>
+      <span class="logo">🎤 Ruslan Admin</span>
       <span class="mobile-user">{{ authStore.user?.email }}</span>
     </header>
 
