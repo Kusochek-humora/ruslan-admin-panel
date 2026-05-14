@@ -26,7 +26,7 @@ async function handleLogin() {
     <div class="login-card">
       <div class="login-header">
         <div class="login-icon">🎤</div>
-        <h1>Tiko Admin</h1>
+        <h1>Ruslan Admin</h1>
         <p>Войдите в панель управления</p>
       </div>
 

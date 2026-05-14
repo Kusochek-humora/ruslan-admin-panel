@@ -59,9 +59,9 @@ export const useEventsStore = defineStore('events', () => {
   async function uploadPoster(file: File): Promise<string> {
     const ext = file.name.split('.').pop()
     const path = `posters/${Date.now()}.${ext}`
-    const { error: err } = await supabase.storage.from('events').upload(path, file)
+    const { error: err } = await supabase.storage.from('images').upload(path, file)
     if (err) throw err
-    const { data } = supabase.storage.from('events').getPublicUrl(path)
+    const { data } = supabase.storage.from('images').getPublicUrl(path)
     return data.publicUrl
   }
 
