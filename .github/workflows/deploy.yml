@@ -34,5 +34,5 @@ jobs:
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: dist/
-          server-dir: /admin-panel.tilegenda.kz/
+          server-dir: /ruslan-admin-panel.ruslantai.kz/
           protocol: ftp
