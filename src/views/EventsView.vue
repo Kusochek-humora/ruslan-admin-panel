@@ -12,7 +12,7 @@ const submitError = ref('')
 const posterFile = ref<File | null>(null)
 const posterPreview = ref<string | null>(null)
 const uploading = ref(false)
-
+// test
 const emptyForm = (): EventInsert => ({
   title: '',
   date: '',
