@@ -12,7 +12,7 @@ const submitError = ref('')
 const posterFile = ref<File | null>(null)
 const posterPreview = ref<string | null>(null)
 const uploading = ref(false)
-// test
+
 const emptyForm = (): EventInsert => ({
   title: '',
   date: '',
@@ -110,7 +110,7 @@ onMounted(() => store.fetchEvents())
               <th>Место</th>
               <th>Город</th>
               <th>Статус</th>
-              <th></th>
+              <th class="th-actions"></th>
             </tr>
           </thead>
           <tbody>
@@ -129,8 +129,10 @@ onMounted(() => store.fetchEvents())
                 </span>
               </td>
               <td class="td-actions">
-                <button class="btn-icon" @click="openEdit(event.id)">✏️</button>
-                <button class="btn-icon btn-delete" @click="handleDelete(event.id)">🗑️</button>
+                <div class="actions-wrap">
+                  <button class="btn-icon" @click="openEdit(event.id)">✏️</button>
+                  <button class="btn-icon btn-delete" @click="handleDelete(event.id)">🗑️</button>
+                </div>
               </td>
             </tr>
           </tbody>
@@ -199,7 +201,10 @@ onMounted(() => store.fetchEvents())
 </template>
 
 <style scoped>
-.events-page { max-width: 1000px; }
+.events-page {
+  width: 100%;
+  min-width: 0;
+}
 
 .page-header {
   display: flex;
@@ -283,7 +288,23 @@ onMounted(() => store.fetchEvents())
 .badge.published { background: rgba(39, 174, 96, 0.15); color: #27ae60; }
 .badge.draft { background: rgba(100, 100, 100, 0.15); color: #777; }
 
-.td-actions { display: flex; gap: 4px; }
+.td-actions {
+  position: sticky;
+  right: 0;
+  z-index: 1;
+  background: #141414;
+  box-shadow: -4px 0 8px rgba(0,0,0,0.5);
+}
+
+.th-actions {
+  position: sticky;
+  right: 0;
+  z-index: 2;
+  background: #1a1a1a;
+  box-shadow: -4px 0 8px rgba(0,0,0,0.5);
+}
+
+.actions-wrap { display: flex; gap: 4px; }
 
 .btn-icon {
   background: none;
