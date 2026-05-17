@@ -120,7 +120,7 @@ onMounted(() => store.fetchEvents())
                 <div v-else class="poster-empty"></div>
               </td>
               <td class="td-title">{{ event.title }}</td>
-              <td>{{ new Date(event.date).toLocaleDateString('ru-RU') }}</td>
+              <td>{{ event.date.slice(0, 10).split('-').reverse().join('.') }}</td>
               <td>{{ event.venue }}</td>
               <td>{{ event.city }}</td>
               <td>
